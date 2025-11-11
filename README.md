@@ -4,39 +4,14 @@ A professional library management system with book and user tracking, CSV import
 
 ## Features
 
-- 📚 **Book Management**: Add, search, reserve, and return books
-- 👥 **User Management**: Track library users with contact information
-- 💾 **Database Persistence**: SQLite database for data storage
-- 📊 **CSV Import**: Load books from CSV files
-- 🎨 **Modern CLI**: Beautiful Typer-based command-line interface with Rich formatting
-- 🧪 **Tested**: Comprehensive unit tests with pytest
-- 🔄 **CI/CD**: GitHub Actions workflow for automated testing
+- Book Management: Add, search, reserve, and return books
+- User Management**: Track library users with contact information
+- Database: SQLite 
+- CSV Import: Load books from CSV files
+- Tested: Comprehensive unit tests with pytest
+- CI/CD: GitHub Actions workflow for automated testing
 
-## Installation
 
-### From Source
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd library-management
-```
-
-2. Create a virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install the package:
-```bash
-pip install -e .
-```
-
-Or install with dev dependencies:
-```bash
-pip install -e ".[dev]"
-```
 
 ## Usage
 
@@ -58,13 +33,13 @@ library list-books --db library.db
 library list-books --available --db library.db
 
 # Reserve a book
-library reserve "The Hobbit" --db library.db
+library reserve "The Grapes of Wrath" --db library.db
 
 # Return a book
-library return "The Hobbit" --db library.db
+library return "The Grapes of Wrath" --db library.db
 
 # Add a user
-library add-user --first "John" --last "Doe" --email "john@example.com" --db library.db
+library add-user --first "My" --last "Name" --email "my@example.com" --db library.db
 
 # List users
 library list-users --db library.db
@@ -75,7 +50,6 @@ library list-users --db library.db
 ```python
 from library_management import LibrarySystem, Book, User, load_books_from_csv
 
-# In-memory mode (no database)
 library = LibrarySystem()
 
 # With database
@@ -84,20 +58,20 @@ library = LibrarySystem(db_path="library.db")
 # Add a book
 book = Book(
     book_id=1,
-    title="The Hobbit",
-    author="J.R.R. Tolkien",
-    genre="Fantasy",
+    title="The Grapes of Wrath",
+    author="John Steinbeck",
+    genre="Fiction",
     average_rating=4.5,
-    isbn="978-0547928227",
+    isbn="978-0140042399",
     available=True
 )
 library.add_book(book)
 
 # Add a user
 user = User(
-    first_name="John",
-    last_name="Doe",
-    email="john@example.com"
+    first_name="My",
+    last_name="Name",
+    email="my@example.com"
 )
 library.add_user(user)
 
@@ -107,7 +81,7 @@ for book in books:
     library.add_book(book)
 
 # Find and reserve a book
-book = library.find_book_by_title("The Hobbit")
+book = library.find_book_by_title("The Grapes of Wrath")
 if book and book.available:
     book.reserve()
     library.update_book(book)
@@ -135,8 +109,8 @@ Optional columns:
 Example CSV:
 ```csv
 title,author,genre,available
-The Hobbit,J.R.R. Tolkien,Fantasy,true
-1984,George Orwell,Dystopian,true
+The Grapes of Wrath,John Steinbeck,Fiction,true
+The Poppy War,R.F. Kuang,Fantasy,true
 ```
 
 ## Database Schema
@@ -185,23 +159,23 @@ pip install -e ".[dev]"
 
 ```
 library-management/
-├── library_management/     # Main package
+├── library_management/     
 │   ├── __init__.py
 │   ├── models.py           # Book and User models
 │   ├── library.py          # LibrarySystem class
-│   ├── database.py         # SQLite database layer
-│   ├── data_loader.py      # CSV loading functionality
+│   ├── database.py         # SQLite db layer
+│   ├── data_loader.py      # CSV loading 
 │   └── cli.py              # Typer CLI interface
 ├── tests/                  # Unit tests
 │   ├── test_models.py
 │   ├── test_library.py
 │   ├── test_database.py
 │   └── test_data_loader.py
-├── scripts/                # Utility scripts
+├── scripts/               
 │   └── generate_book_data.py
-├── pyproject.toml          # Project configuration
-├── requirements.txt        # Production dependencies
-├── requirements-dev.txt    # Development dependencies
+├── pyproject.toml          # project config
+├── requirements.txt        # prod dependencies
+├── requirements-dev.txt    # dev dependencies
 └── README.md
 ```
 
@@ -217,6 +191,4 @@ The project includes GitHub Actions workflows that:
 
 MIT License
 
-## Author
 
-Bryn Pedersen (brp@gmail.com)
