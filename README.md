@@ -155,6 +155,16 @@ mypy library_management
 pip install -e ".[dev]"
 ```
 
+### Optional Analysis Dependencies
+
+For data analysis and visualization (pandas, matplotlib):
+
+```bash
+pip install -e ".[analysis]"
+# or
+pip install -r requirements-analysis.txt
+```
+
 ## Project Structure
 
 ```

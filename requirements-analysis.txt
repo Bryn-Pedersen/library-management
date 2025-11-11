@@ -1,0 +1,7 @@
+# Optional dependencies for data analysis and visualization
+# These are not required for the core library management functionality
+# Install with: pip install -r requirements-analysis.txt
+
+pandas>=2.0.0
+matplotlib>=3.8
+
