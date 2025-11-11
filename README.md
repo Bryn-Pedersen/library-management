@@ -1,6 +1,6 @@
 # Library Management System
 
-A professional library management system with book and user tracking, CSV import/export, and SQLite database persistence.
+A library management system with book and user tracking, CSV import/export, and SQLite database persistence.
 
 ## Features
 
