@@ -186,7 +186,3 @@ The project includes GitHub Actions workflows that:
 - Run tests on multiple operating systems (Linux, macOS, Windows)
 - Check code formatting and linting
 - Generate coverage reports
-
-## Author
-
-Bryn Pedersen (brp@gmail.com)
