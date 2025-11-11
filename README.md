@@ -5,10 +5,10 @@ A library management system with book and user tracking, CSV import/export, and 
 ## Features
 
 - Book Management: Add, search, reserve, and return books
-- User Management**: Track library users with contact information
+- User Management: Track library users with contact information
 - Database: SQLite 
 - CSV Import: Load books from CSV files
-- Tested: Comprehensive unit tests with pytest
+- Comprehensive unit tests with pytest
 - CI/CD: GitHub Actions workflow for automated testing
 
 
