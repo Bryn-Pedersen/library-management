@@ -187,3 +187,6 @@ The project includes GitHub Actions workflows that:
 - Check code formatting and linting
 - Generate coverage reports
 
+## Author
+
+Bryn Pedersen (brp@gmail.com)
